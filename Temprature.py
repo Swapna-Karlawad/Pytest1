@@ -3,9 +3,13 @@ def celsius_to_fahrenheit(celsius):
 
 
 def main():
-    celsius = float(input("Enter temperature in Celsius: "))
-    fahrenheit = celsius_to_fahrenheit(celsius)
+    try:
+        celsius = float(input("Enter temperature in Celsius: "))
+    except EOFError:
+        print("No input provided. Skipping user input.")
+        return
 
+    fahrenheit = celsius_to_fahrenheit(celsius)
     print(f"Celsius: {celsius}")
     print(f"Fahrenheit: {fahrenheit}")
 
